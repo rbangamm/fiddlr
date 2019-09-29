@@ -6,7 +6,15 @@ class OutputWindow extends Component {
     }
 
     render() {
-        return (<textarea 
+        let frameHeight = window.innerHeight;
+        return (<textarea
+                style={{
+                    height: frameHeight,
+                    width: "100%",
+                    margin:0,
+                    padding:0,
+                    border: "none"
+                }} 
                 value={this.props.output} 
                 ></textarea>
         );

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MonacoEditor from 'react-monaco-editor';
 import { render } from 'react-dom';
 import OutputWindow from './components/outputWindow';
+import TitleBar from './components/titleBar';
 
 class App extends Component {
     constructor(props) {
@@ -26,18 +27,26 @@ class App extends Component {
         // Get the viewport height
         let frameHeight = window.innerHeight;
         return (
-            <div
-                style={{
+            <div 
+            style={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "stretch"
+              }}>
+            <TitleBar></TitleBar>
+            <span
+                style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center"
               }}
             >
             <MonacoEditor
             ref="monaco"
             width="100%"
-            height={frameHeight*0.9}
+            height={frameHeight}
             language="typescript"
             theme="vs-dark"
             value={code}
@@ -45,9 +54,10 @@ class App extends Component {
             onChange={this.onChange.bind(this)}
             editorDidMount={this.editorDidMount.bind(this)}
             />
-            <OutputWindow 
+            <OutputWindow
             output={this.state.output}
-            />
+            ></OutputWindow>
+            </span>
             </div>
         );
     }
