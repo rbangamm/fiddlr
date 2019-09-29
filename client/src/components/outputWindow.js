@@ -15,7 +15,9 @@ class OutputWindow extends Component {
                     padding:0,
                     border: "none"
                 }} 
-                value={this.props.output} 
+                value={this.props.output}
+                height={this.props.height}
+                width={this.props.width} 
                 ></textarea>
         );
     }

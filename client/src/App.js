@@ -9,16 +9,29 @@ class App extends Component {
         super(props);
         this.state = {
             code: 'var x = 5;',
-            output: 'output'
+            output: 'output',
+            width: 0,
+            height: 0
         }
     }
+    resize = () => {this.setState({width: window.innerWidth, height: window.innerHeight})};
     editorDidMount(editor, monaco) {
         console.log('editorDidMount', editor);
         editor.focus();
     }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.resize);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.resize);
+    }
+
     onChange(newValue, e) {
         console.log('onChange', newValue, e);
     }
+
     render() {
         const code = this.state.code;
         const options = {
@@ -56,6 +69,8 @@ class App extends Component {
             />
             <OutputWindow
             output={this.state.output}
+            height={this.state.height}
+            width={this.state.width}
             ></OutputWindow>
             </span>
             </div>

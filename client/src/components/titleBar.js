@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./res/logo.svg";
+import logo from "./res/logo.png";
 
 class TitleBar extends Component {
     constructor(props) {
@@ -8,7 +8,10 @@ class TitleBar extends Component {
 
     render() {
         let frameHeight = window.innerHeight;
-        return (<img src={logo}></img>
+        return (
+            <div>
+            <img style={{float:"left"}} src={logo}></img>
+            </div>
         );
     }
 }
