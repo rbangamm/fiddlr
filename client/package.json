@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --progress --colors --port 8886"
+    "start": "webpack-dev-server --config src/webpack.config.js --hot --inline --progress --colors --port 8886"
   },
   "eslintConfig": {
     "extends": "react-app"
