@@ -8,10 +8,14 @@ a playground to try out tech stacks I want more experience with.
 
 ## Running Locally
 
-First start the backend from the backend directory:
+First make sure there is a MongoDB instance running and then start the backend from the backend directory:
 
 `cd backend && npm run start`
 
-Now go back to the root level and do the same with the client code:
+Now go back to the root level and run the following:
 
-`cd client && npm run start`
+```
+cd client
+yarn install
+yarn start
+```
