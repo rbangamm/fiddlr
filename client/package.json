@@ -2,20 +2,8 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "axios": "^0.19.0",
-    "monaco-editor": "^0.18.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-monaco-editor": "^0.30.2",
-    "react-scripts": "3.0.1",
-    "eslint-utils": ">= 1.4.1"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "webpack-dev-server --hot --inline --progress --colors --port 8886"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,7 +21,35 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^4.1.0",
     "monaco-editor-webpack-plugin": "^1.7.0",
-    "webpack-cli": "^3.3.8"
+    "style-loader": "^0.23.1",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "peerDependencies": {
+    "monaco-editor": "*",
+    "react": "^15.x || ^16.x"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.17.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-monaco-editor": "latest"
   }
 }

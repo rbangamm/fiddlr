@@ -14,7 +14,11 @@ class App extends Component {
             height: 0
         }
     }
-    resize = () => {this.setState({width: window.innerWidth, height: window.innerHeight})};
+    
+    resize() {
+        this.setState({width: window.innerWidth, height: window.innerHeight});
+    }
+
     editorDidMount(editor, monaco) {
         console.log('editorDidMount', editor);
         editor.focus();

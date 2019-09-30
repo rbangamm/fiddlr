@@ -2,15 +2,26 @@ const path = require('path');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
-  entry: './index.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'App.js'
+    filename: 'main.js'
   },
   module: {
     rules: [{
       test: /\.css$/,
       use: ['style-loader', 'css-loader']
+    }, {
+      test: /\.js$/,
+      use: [
+        {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', 
+                      '@babel/preset-react']
+          }
+        }
+      ]
     }]
   },
   plugins: [
