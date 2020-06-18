@@ -31,12 +31,5 @@ let monacoEditor = monaco.editor.create(document.getElementById('container'), {
 window.onresize = function() {
 	let container = document.getElementById('container')
 	container.style.width = window.innerWidth
-	console.log(window.innerWidth)
 	monacoEditor.layout()
-	/*
-	for (let i = 0; i < container.children.length; i++) {
-		console.log(container.children[i])
-		container.children[i].style.width = window.innerWidth
-	}
-	*/
 }
