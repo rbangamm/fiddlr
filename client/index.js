@@ -18,7 +18,7 @@ self.MonacoEnvironment = {
 	}
 }
 
-monaco.editor.create(document.getElementById('container'), {
+let monacoEditor = monaco.editor.create(document.getElementById('container'), {
 	value: [
 		'def x():',
 		'\tprint("Hello world!");',
@@ -26,3 +26,17 @@ monaco.editor.create(document.getElementById('container'), {
 	].join('\n'),
 	language: 'python'
 });
+
+
+window.onresize = function() {
+	let container = document.getElementById('container')
+	container.style.width = window.innerWidth
+	console.log(window.innerWidth)
+	monacoEditor.layout()
+	/*
+	for (let i = 0; i < container.children.length; i++) {
+		console.log(container.children[i])
+		container.children[i].style.width = window.innerWidth
+	}
+	*/
+}
