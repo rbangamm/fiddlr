@@ -18,6 +18,23 @@ self.MonacoEnvironment = {
 	}
 }
 
+monaco.editor.defineTheme('defaultTheme', {
+	base: 'vs-dark',
+	inherit: true,
+	rules: [{ background: '0F0F0F' }],
+    colors: {
+        'editor.foreground': '#ffffff',
+        'editor.background': '#000000',
+        'editorCursor.foreground': '#8B0000',
+        'editor.lineHighlightBackground': '#0000FF20',
+        'editorLineNumber.foreground': '#008800',
+        'editor.selectionBackground': '#88000030',
+		'editor.inactiveSelectionBackground': '#88000015'
+    }
+})
+
+monaco.editor.setTheme('defaultTheme')
+
 let monacoEditor = monaco.editor.create(document.getElementById('container'), {
 	value: [
 		'def x():',
@@ -27,7 +44,7 @@ let monacoEditor = monaco.editor.create(document.getElementById('container'), {
 	language: 'python'
 });
 
-
+// resize the editor and its container
 window.onresize = function() {
 	let container = document.getElementById('container')
 	container.style.width = window.innerWidth
