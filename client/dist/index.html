@@ -1,11 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%; margin: 0; padding: 0; overflow: hidden;">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<style>
+		button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			transition: all 0.5s;
+		}
+		button span {
+			cursor: pointer;
+			display: inline-block;
+			position: relative;
+			transition: 0.5s;
+		}
+
+		button span:after {
+			content: '\25B6';
+			position: absolute;
+			opacity: 0;
+			top: 0;
+			right: -20px;
+			transition: 0.5s;
+		}
+
+		button:hover span {
+			padding-right: 25px;
+		}
+
+		button:hover span:after {
+			opacity: 1;
+			right: 0;
+		}
+
+		.save span:after {
+			content: '\23FA';
+		}
+
+		.save {
+			background-color: #240e72;
+		}
+	</style>
 </head>
-<body style="background-color: #00000f;">
-	<div id="container" style="width:100%;height:800px;margin:0;padding:0;border:1px solid #ccc"></div>
+<body style="background-color: #00000f; height: 100%; overflow: hidden; margin: 0; padding: 0;">
+	<span id="header" style="margin: 0; background-color: #0a0a0a;width: 100%; padding: 0;display: inline-block;">
+		<button type="button"><span>run</span></button>
+		<button class="save" type="button"><span>save</span></button> 
+	</span>
+	<span style="display: inline-flex; width: 100%">
+		<div id="container" style="width:50%;height:800px;margin:0;padding:0;"></div>
+		<div id="output" style="color:white;width:50%;margin:0;padding:0;padding-left:4px;"><p>Hello world!</p></div>
+	</span>
+	<div id="footer"></div>
 <script src="./app.bundle.js"></script>
 
 </body>

@@ -35,7 +35,7 @@ monaco.editor.defineTheme('defaultTheme', {
 
 monaco.editor.setTheme('defaultTheme')
 
-let monacoEditor = monaco.editor.create(document.getElementById('container'), {
+self.monacoEditor = monaco.editor.create(document.getElementById('container'), {
 	value: [
 		'def x():',
 		'\tprint("Hello world!");',
@@ -47,6 +47,10 @@ let monacoEditor = monaco.editor.create(document.getElementById('container'), {
 // resize the editor and its container
 window.onresize = function() {
 	let container = document.getElementById('container')
-	container.style.width = window.innerWidth
-	monacoEditor.layout()
+	let output = document.getElementById('output')
+	container.style.width = window.innerWidth / 2
+	container.style.margin = 0
+	container.style.height = window.innerHeight
+	output.style.width = window.innerWidth - window.innerWidth / 2
+	self.monacoEditor.layout()
 }
