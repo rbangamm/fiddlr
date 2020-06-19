@@ -1,6 +1,6 @@
 # Fiddlr
 
-Fiddlr is an online Python IDE that allows for easy code execution and version sharing.
+Fiddlr is an online Python IDE that allows for easy code execution and snippet version control.
 
 ## Demo
 
@@ -22,5 +22,5 @@ TBD..
 
 ## Background
 
-I originally thought of this when trying to find a Python IDE online that allowed for
-sharing and updating code snippets, but couldn't find one that didn't require signing up.
+I originally thought of this when trying to find an online Python IDE that allowed users to
+share and update existing code snippets, but couldn't find one that didn't require signing up.
