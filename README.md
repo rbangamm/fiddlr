@@ -1,21 +1,26 @@
 # Fiddlr
 
-## Background
+Fiddlr is an online Python IDE that allows for easy code execution and version sharing.
 
-I originally thought of this idea when trying to find a Python IDE online that allowed for
-sharing and updating code revisions, but couldn't find one that didn't require signing up. I also needed
-a playground to try out tech stacks I want more experience with.
+## Demo
+
+![Fiddlr](https://github.com/rbangamm/fiddlr/blob/master/resources/fiddlr.PNG)
 
 ## Running Locally
 
-First make sure there is a MongoDB instance running and then start the backend from the backend directory:
+### Frontend
 
-`cd backend && npm run start`
-
-Now go back to the root level and run the following:
+In the `client` directory, then run the following:
 
 ```
-cd client
-yarn install
+yarn
+yarn build
 yarn start
 ```
+### Backend
+TBD..
+
+## Background
+
+I originally thought of this when trying to find a Python IDE online that allowed for
+sharing and updating code snippets, but couldn't find one that didn't require signing up.
