@@ -53,15 +53,16 @@
 </head>
 <body style="background-color: #00000f; height: 100%; overflow: hidden; margin: 0; padding: 0;">
 	<span id="header" style="margin: 0; background-color: #0a0a0a;width: 100%; padding: 0;display: inline-block;">
-		<button type="button"><span>run</span></button>
+		<button id="run" type="button"><span>run</span></button>
 		<button class="save" type="button"><span>save</span></button> 
 	</span>
 	<span style="display: inline-flex; width: 100%">
 		<div id="container" style="width:50%;height:800px;margin:0;padding:0;"></div>
-		<div id="output" style="color:white;width:50%;margin:0;padding:0;padding-left:4px;"><p id="outputText"></p></div>
+		<div id="output" style="color:white;width:50%;margin:0;padding:0;padding-left:4px;"><pre id="outputText"></pre></div>
 	</span>
 	<div id="footer"></div>
-<script src="./app.bundle.js"></script>
-
+	<script src="./app.bundle.js"></script>
+	<script src="./skulpt-dist-master/skulpt.min.js" type="text/javascript"></script>
+	<script src="./skulpt-dist-master/skulpt-stdlib.js" type="text/javascript"></script>
 </body>
 </html>

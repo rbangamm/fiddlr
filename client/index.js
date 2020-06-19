@@ -1,4 +1,5 @@
 import * as monaco from 'monaco-editor';
+import * as io from './io.js';
 
 self.MonacoEnvironment = {
 	getWorkerUrl: function (moduleId, label) {
@@ -54,3 +55,28 @@ window.onresize = function() {
 	output.style.width = window.innerWidth - window.innerWidth / 2
 	self.monacoEditor.layout()
 }
+
+let readPython = io.pyin
+let writePython = io.pyout
+
+function runPython() {
+	let prog = self.monacoEditor.getModel().getValue();
+	console.log("prog: " + prog) 
+	let pre = document.getElementById("outputText"); 
+	pre.innerHTML = ''; 
+	Sk.pre = "output";
+	Sk.configure({output:writePython, read:readPython});
+	// configure turtle graphics later 
+	//(Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+	let myPromise = Sk.misceval.asyncToPromise(function() {
+		return Sk.importMainWithBody("<stdin>", false, prog, true);
+	});
+	myPromise.then(function(mod) {
+		console.log('success');
+	},
+		function(err) {
+		console.log(err.toString());
+	});
+}
+
+document.getElementById("run").onclick = function() {runPython();}
