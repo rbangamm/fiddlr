@@ -10,7 +10,7 @@ Fiddlr is an online Python IDE that allows for easy code execution and snippet v
 
 ### Frontend
 
-In the `client` directory, then run the following:
+In the `client` sub-directory, run the following:
 
 ```
 yarn
